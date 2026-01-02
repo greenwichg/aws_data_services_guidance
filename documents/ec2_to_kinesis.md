@@ -1,6 +1,6 @@
-## How to Automate Data Streaming to Amazon Kinesis Data Streams
-
 # CSV to Kinesis Data Streams - Complete Guide
+
+![Architecture Diagram](../images/ec2_to_kinesis/image.png)
 
 ## Tech Stack
 
@@ -11,13 +11,13 @@
 
 ## Overview
 
-- We will be running all the scripts inside the EC2 instance. So, we have to first create a new EC2 instance with suitable IAM roles.
+We will be running all the scripts inside the EC2 instance. So, we have to first create a new EC2 instance with suitable IAM roles.
 
-- Then we are going to create a Python script that gets a CSV file from a URL. Then, it will stream the CSV data row by row into the Amazon Kinesis Data Streams with predefined interval and length.
+Then we are going to create a Python script that gets a CSV file from a URL. Then, it will stream the CSV data row by row into the Amazon Kinesis Data Streams with predefined interval and length.
 
-- We are going to automate the whole process using a shell script and will be able to monitor live logs.
+We are going to automate the whole process using a shell script and will be able to monitor live logs.
 
-- This practice can be used to represent a streaming data pipeline.
+This practice can be used to represent a streaming data pipeline.
 
 ## IAM Role
 
@@ -295,3 +295,5 @@ sudo tail -f /project/csv_to_kinesis_streams.log
 In the end, you can check each shard of Kinesis streams by choosing **Trim Horizon** to get all the records from the beginning.
 
 ---
+
+Hope it helps, thanks for reading! :)
