@@ -1,7 +1,5 @@
 # CSV to Kinesis Data Streams - Complete Guide
 
-![Architecture Diagram](../images/ec2_to_kinesis/image.png)
-
 <img src="../images/ec2_to_kinesis/image.png" alt="Architecture Diagram" width="600">
 
 ## Tech Stack
