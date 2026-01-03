@@ -2,7 +2,7 @@
 
 ## AWS Glue ETL Job, S3, Apache Spark
 
-<img src="../images/aws_ingestion/image_1.png" alt="Architecture Diagram" width="600">
+<img src="../images/aws_ingestion_glue/image_1.png" alt="Architecture Diagram" width="600">
 
 [![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/dogukannulu/glue_etl_job_data_catalog_s3)
 
@@ -58,7 +58,7 @@ We should also add the following policies:
 
 We can give a certain name for our newly created role as well.
 
-<img src="../images/aws_ingestion/image_2.png" alt="Architecture Diagram" width="600">
+<img src="../images/aws_ingestion_glue/image_2.png" alt="Architecture Diagram" width="600">
 
 ## S3 Bucket
 
@@ -66,29 +66,29 @@ After creating the necessary IAM role, we should create the S3 bucket. This buck
 
 If we want to create the S3 bucket manually, we can do it via the S3 dashboard directly and upload the CSV file using AWS CLI. For this article, we will be using a bucket named `aws-glue-etl-job-spark`. This part is important since the bucket name should include "aws-glue", if not we should define some other permissions. We will upload our initial CSV file into this bucket with the key `ufo_reports_source_csv/uforeports.csv`. We are going to use this file as our main source of data.
 
-<img src="../images/aws_ingestion/image_3.png" alt="Architecture Diagram" width="600">
+<img src="../images/aws_ingestion_glue/image_3.png" alt="Architecture Diagram" width="600">
 
 ## Glue Crawler / Data Catalog
 
 In this part, the first thing is creating a new database. We can create the database from **AWS Glue** → **Databases** → **Add database**. We can name it `glue-etl-from-csv-to-parquet`.
 
-<img src="../images/aws_ingestion/image_4.png" alt="Architecture Diagram" width="600">
+<img src="../images/aws_ingestion_glue/image_4.png" alt="Architecture Diagram" width="600">
 
 ### Create Table
 
 The second part is creating a new table in this database. We are going to use this table to keep the metadata of the object we recently put into the S3 bucket. We can do it both by using Crawler and by editing the schema manually. We will go through editing the schema manually. Our table name will be `ufo_reports_source_csv` (the same as the S3 prefix).
 
-<img src="../images/aws_ingestion/image_5.png" alt="Architecture Diagram" width="600">
+<img src="../images/aws_ingestion_glue/image_5.png" alt="Architecture Diagram" width="600">
 
 We are going to choose the source data as **S3** and browse the location of our newly created object. Be careful that we should choose the directory instead of the file itself at this point.
 
-<img src="../images/aws_ingestion/image_6.png" alt="Architecture Diagram" width="600">
+<img src="../images/aws_ingestion_glue/image_6.png" alt="Architecture Diagram" width="600">
 
 ### Define Schema
 
 For our data ufo reports, we should choose the data type as **CSV** and define the schema manually. The main difference between the Crawler and custom schema selection is this point. If we chose Crawler, the schema would be detected automatically but we had to pay some cost. That's the main reason we chose custom schema. If we use Crawler, every option will be the same apart from the schema since it will be determined automatically by Crawler. We can also create a schema registry for the frequently used data catalogs as another option.
 
-<img src="../images/aws_ingestion/image_7.png" alt="Architecture Diagram" width="600">
+<img src="../images/aws_ingestion_glue/image_7.png" alt="Architecture Diagram" width="600">
 
 After creating the source Data Catalog (database and table) we can now create the Glue ETL job.
 
@@ -100,17 +100,17 @@ The main purpose of this Glue ETL job is to modify the source CSV file using the
 
 We are going to create a job using the Spark script editor.
 
-<img src="../images/aws_ingestion/image_8.png" alt="Architecture Diagram" width="600">
+<img src="../images/aws_ingestion_glue/image_8.png" alt="Architecture Diagram" width="600">
 
 ### Configure Script
 
 It will lead us to the script page. Before going through the script, we can configure our script. We should first give our script a name and choose the recently created IAM role.
 
-<img src="../images/aws_ingestion/image_9.png" alt="Architecture Diagram" width="600">
+<img src="../images/aws_ingestion_glue/image_9.png" alt="Architecture Diagram" width="600">
 
 For this specific task, choosing the minimum resource power will be enough since the data load is not that big. We will choose the number of workers as **2** and the worker type as **G 1X**.
 
-<img src="../images/aws_ingestion/image_10.png" alt="Architecture Diagram" width="600">
+<img src="../images/aws_ingestion_glue/image_10.png" alt="Architecture Diagram" width="600">
 
 ### Import Libraries and Initialize
 
@@ -281,9 +281,9 @@ All the remaining parts will be the same. You might take a look at the above Jup
 
 After the run is complete and it succeeds, we can first check the S3 bucket. A new directory should be created inside the bucket named `ufo_reports_target_parquet` and the resulting parquet file should be loaded into it.
 
-<img src="../images/aws_ingestion/image_12.png" alt="Architecture Diagram" width="600">
+<img src="../images/aws_ingestion_glue/image_12.png" alt="Architecture Diagram" width="600">
 
-<img src="../images/aws_ingestion/image_13.png" alt="Architecture Diagram" width="600">
+<img src="../images/aws_ingestion_glue/image_13.png" alt="Architecture Diagram" width="600">
 
 ### S3 Select
 
@@ -293,7 +293,7 @@ We can click on the parquet file and choose **S3 Select** from the actions. We c
 
 After checking the data in the S3 bucket, we can also check if the table is created in the Glue Data Catalog.
 
-<img src="../images/aws_ingestion/image_14.png" alt="Architecture Diagram" width="600">
+<img src="../images/aws_ingestion_glue/image_14.png" alt="Architecture Diagram" width="600">
 
 We can see that `ufo_reports_target_parquet` table is created in Glue Data Catalog. We can also see that the database is the one we recently created. The main location of this table is the parquet S3 object under `aws-glue-etl-job-spark/ufo_reports_target_parquet/`. This table represents the metadata of that object.
 
@@ -301,7 +301,7 @@ We can see that `ufo_reports_target_parquet` table is created in Glue Data Catal
 
 We can now click on the table and choose **View data** from Actions.
 
-<img src="../images/aws_ingestion/image_15.png" alt="Architecture Diagram" width="600">
+<img src="../images/aws_ingestion_glue/image_15.png" alt="Architecture Diagram" width="600">
 
 This will lead us through Amazon Athena. We can run the below simple SQL query to see the first 10 rows of the data.
 
@@ -330,7 +330,7 @@ We can run SQL queries in Athena. We should be careful about the below-mentioned
 
 We can add a schedule to our newly created Glue ETL job. If we want to run the job on a regular basis, we should add a suitable schedule using **Cron**. We may see the below schedule which will be running at 10 AM UTC every day.
 
-<img src="../images/aws_ingestion/image_16.png" alt="Architecture Diagram" width="600">
+<img src="../images/aws_ingestion_glue/image_16.png" alt="Architecture Diagram" width="600">
 
 **Example Cron Expression:**
 ```
