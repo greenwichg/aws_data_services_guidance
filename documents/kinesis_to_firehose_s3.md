@@ -1,4 +1,4 @@
-# CSV to Kinesis Streams to S3 - Complete Guide
+# How to Stream CSV Data from Amazon Kinesis Data Streams to S3 Through Firehose
 
 <img src="../images/kinesis_to_firehose/image_1.png" alt="Architecture Diagram" width="600">
 
