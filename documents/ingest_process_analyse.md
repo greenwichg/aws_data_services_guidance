@@ -305,11 +305,11 @@ main >> "$log_file" 2>&1
 We may change all the command line arguments depending on our use case. 
 
 **For related articles:**
-- [How to Automate Data Streaming to Amazon Kinesis Data Streams](https://medium.com/@dogukannulu/how-to-automate-data-streaming-to-amazon-kinesis-data-streams)
+- [How to Automate Data Streaming to Amazon Kinesis Data Streams](https://github.com/greenwichg/aws_data_services_guide/blob/main/documents/ec2_to_kinesis_streams.md)
 
 For a very similar process for remote CSV files, you can take a look at the below article.
 
-- [How to Stream CSV Data from Amazon Kinesis Data Streams to S3 Through Firehose](https://medium.com/@dogukannulu/how-to-stream-csv-data-from-amazon-kinesis-data-streams-to-s3-through-firehose)
+- [How to Stream CSV Data from Amazon Kinesis Data Streams to S3 Through Firehose](https://github.com/greenwichg/aws_data_services_guide/blob/main/documents/kinesis_to_firehose_s3.md)
 
 ## Python Script
 
