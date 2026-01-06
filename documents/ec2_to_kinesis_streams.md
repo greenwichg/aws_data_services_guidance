@@ -302,5 +302,3 @@ sudo tail -f /project/csv_to_kinesis_streams.log
 In the end, you can check each shard of Kinesis streams by choosing **Trim Horizon** to get all the records from the beginning.
 
 ---
-
-Hope it helps, thanks for reading! :)
