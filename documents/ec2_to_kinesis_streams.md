@@ -27,7 +27,7 @@ We are going to create an IAM role that will give our EC2 instance permission to
 
 <img src="../images/ec2_to_kinesis/image_2.png" alt="Architecture Diagram" width="600">
 
-We are going to choose **AmazonKinesisFullAccess** as the role. It's not the best practice, but since this is a practical guide, we can choose this role. We should, instead, create a dedicated JSON for the specific streams. In the end, we can give it the name `ec2-kinesis-full-access`.
+We are going to choose **AmazonKinesisFullAccess** as the role. It's not the best practice, but since this is a practical guide, we can choose this role. We should, instead, create a dedicated JSON for the specific streams. In the end, we can give it the name **`ec2-kinesis-full-access`**.
 
 <img src="../images/ec2_to_kinesis/image_3.png" alt="Architecture Diagram" width="600">
 
