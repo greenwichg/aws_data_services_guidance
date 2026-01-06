@@ -205,7 +205,7 @@ And we should set **Buffer hints, compression, and encryption** → **Buffer int
 
 ## Start Streaming
 
-📂 [View streaming code on GitHub](https://github.com/dogukannulu/aws_end_to_end_streaming_pipeline/tree/main/json_to_kinesis_streams)
+📂 [View streaming code on GitHub](https://github.com/greenwichg/aws_end_to_end_streaming_pipeline/tree/main/json_to_kinesis_streams)
 
 In this section, we will walk through all the scripts and how the streaming will work. Assuming we are already inside our EC2 instance (root directory) by connecting it via SSH, we are going to create a dedicated directory `/project` for our instance. Then, we will download the shell script to our instance, make it executable and run it.
 
