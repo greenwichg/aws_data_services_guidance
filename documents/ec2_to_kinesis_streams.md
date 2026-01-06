@@ -77,9 +77,9 @@ logger = logging.getLogger(__name__)
 
 ### KinesisStreamer Class
 
-We are going to create a class where we handle all Kinesis-related processes. We are going to first create a Kinesis client for all the processes. As you can see, the script is valid for the region `eu-central-1`, but you can easily modify the script if you want to use it for other regions.
+We are going to create a class where we handle all Kinesis-related processes. We are going to first create a Kinesis client for all the processes. As you can see, the script is valid for the region **`eu-central-1`**, but you can easily modify the script if you want to use it for other regions.
 
-`send_record` will be used to send the CSV data to the Kinesis with a predefined stream name and partition key. It also checks if the Kinesis stream exists or not.
+**`send_record`** will be used to send the CSV data to the Kinesis with a predefined stream name and partition key. It also checks if the Kinesis stream exists or not.
 
 ```python
 class KinesisStreamer:
