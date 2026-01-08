@@ -277,8 +277,6 @@ We can also see the resulting data using **S3 Select** for the target parquet fi
 
 <img src="../images/aws_ingestion_emr/image_17.png" alt="Architecture Diagram" width="600">
 
-You may also see the [resulting parquet file here](https://github.com/dogukannulu/glue_etl_job_data_catalog_s3/tree/main/emr_zeppelin).
+You may also see the [resulting parquet file here](https://github.com/greenwichg/glue_etl_job_data_catalog_s3/blob/main/data_sources/clean_transactions.snappy.parquet).
 
 ---
-
-Thanks for reading, you may reach out via [dogukanulu.dev](https://dogukanulu.dev)
