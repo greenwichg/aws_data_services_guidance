@@ -92,7 +92,7 @@ After creating the source Data Catalog (database and table) we can now create th
 
 ## Glue ETL Job Using Spark Script
 
-📂 [View Spark script on GitHub](https://github.com/dogukannulu/glue_etl_job_data_catalog_s3/blob/main/glue_jobs/glue_etl_job_spark_script.py)
+📂 [View Spark script on GitHub](https://github.com/greenwichg/glue_etl_job_data_catalog_s3/blob/main/glue_jobs/glue_etl_job_spark_script.py)
 
 The main purpose of this Glue ETL job is to modify the source CSV file using the Glue Data Catalog and upload the modified data frame in the parquet format into S3 and create a corresponding target data catalog that keeps the metadata information of the target object.
 
