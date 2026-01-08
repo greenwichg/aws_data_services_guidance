@@ -131,7 +131,7 @@ After all, we can click on **Create cluster** button. Once created, the cluster 
 
 ## Spark Job
 
-📂 [View Zeppelin Notebook on GitHub](https://github.com/dogukannulu/glue_etl_job_data_catalog_s3/blob/main/emr_zeppelin/emr_zeppelin_notebook.ipynb)
+📂 [View Zeppelin Notebook on GitHub](https://github.com/greenwichg/glue_etl_job_data_catalog_s3/blob/main/emr_zeppelin/emr_zeppelin_notebook.ipynb)
 
 We will be using Zeppelin Notebook to run our Spark job. We should modify the inbound rule for Zeppelin Notebook's ID (For demo purposes, we can allow all IPs but this will make our cluster so vulnerable). After all, we will access the Zeppelin notebook in the **Applications** section. Now, we are going to go through the Spark job.
 
