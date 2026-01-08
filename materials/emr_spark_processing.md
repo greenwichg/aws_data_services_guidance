@@ -131,7 +131,7 @@ After all, we can click on **Create cluster** button. Once created, the cluster 
 
 ## Spark Job
 
-📂 [View Zeppelin Notebook on GitHub](https://github.com/dogukannulu/glue_etl_job_data_catalog_s3/blob/main/emr_zeppelin/emr_zeppelin_notebook.ipynb)
+📂 [View Zeppelin Notebook on GitHub](https://github.com/greenwichg/glue_etl_job_data_catalog_s3/blob/main/emr_zeppelin/emr_zeppelin_notebook.ipynb)
 
 We will be using Zeppelin Notebook to run our Spark job. We should modify the inbound rule for Zeppelin Notebook's ID (For demo purposes, we can allow all IPs but this will make our cluster so vulnerable). After all, we will access the Zeppelin notebook in the **Applications** section. Now, we are going to go through the Spark job.
 
@@ -277,8 +277,6 @@ We can also see the resulting data using **S3 Select** for the target parquet fi
 
 <img src="../images/aws_ingestion_emr/image_17.png" alt="Architecture Diagram" width="600">
 
-You may also see the [resulting parquet file here](https://github.com/dogukannulu/glue_etl_job_data_catalog_s3/tree/main/emr_zeppelin).
+You may also see the [resulting parquet file here](https://github.com/greenwichg/glue_etl_job_data_catalog_s3/blob/main/data_sources/clean_transactions.snappy.parquet).
 
 ---
-
-Thanks for reading, you may reach out via [dogukanulu.dev](https://dogukanulu.dev)
